@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rHm-EE-1qA">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-M.ttf">
+            <string>Ubuntu-Medium</string>
+        </array>
+        <array key="Ubuntu-R.ttf">
+            <string>Ubuntu</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Audio View Controller-->
+        <scene sceneID="hUA-V5-Ady">
+            <objects>
+                <viewController storyboardIdentifier="AudioViewController" id="rHm-EE-1qA" customClass="AudioViewController" customModule="CustomMusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zqc-bV-yQc">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJH-cJ-8aK">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6L-Lb-0TB" customClass="GradientView" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                                <color key="value" red="0.035294117649999998" green="0.49019607840000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomAlpha">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="topAlpha">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="y4J-Jx-OUk">
+                                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="x6L-Lb-0TB" firstAttribute="leading" secondItem="cJH-cJ-8aK" secondAttribute="leading" id="07b-2V-GFm"/>
+                                    <constraint firstAttribute="bottom" secondItem="x6L-Lb-0TB" secondAttribute="bottom" id="3ti-ZU-YsU"/>
+                                    <constraint firstAttribute="trailing" secondItem="y4J-Jx-OUk" secondAttribute="trailing" id="3zN-LL-dh7"/>
+                                    <constraint firstItem="y4J-Jx-OUk" firstAttribute="top" secondItem="cJH-cJ-8aK" secondAttribute="top" id="92m-Sq-fO4"/>
+                                    <constraint firstAttribute="bottom" secondItem="y4J-Jx-OUk" secondAttribute="bottom" id="HAX-Iv-sVA"/>
+                                    <constraint firstAttribute="trailing" secondItem="x6L-Lb-0TB" secondAttribute="trailing" id="KZ5-eF-hSk"/>
+                                    <constraint firstItem="x6L-Lb-0TB" firstAttribute="top" secondItem="cJH-cJ-8aK" secondAttribute="top" id="Q47-n1-uUO"/>
+                                    <constraint firstItem="y4J-Jx-OUk" firstAttribute="leading" secondItem="cJH-cJ-8aK" secondAttribute="leading" id="ZDF-HW-DMV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRc-4i-flY">
+                                <rect key="frame" x="0.0" y="0.0" width="852" height="414"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2f-36-BmW">
+                                        <rect key="frame" x="0.0" y="0.0" width="852" height="414"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9j-8Y-OXO">
+                                                <rect key="frame" x="800" y="20" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="47" id="SWc-MT-FFQ">
+                                                        <variation key="heightClass=compact" constant="32"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="47" id="y9a-aJ-7z0">
+                                                        <variation key="heightClass=compact" constant="32"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="Image_Gallery_Close"/>
+                                                <connections>
+                                                    <action selector="closeVideoAction:" destination="rHm-EE-1qA" eventType="touchUpInside" id="UBo-sI-BLy"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio_player_top_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vZc-XZ-odR">
+                                                <rect key="frame" x="23" y="20" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="47" id="0qv-xl-w1P">
+                                                        <variation key="heightClass=compact" constant="32"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="47" id="r2G-2L-AGh">
+                                                        <variation key="heightClass=compact" constant="32"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIM-WP-xjj">
+                                                <rect key="frame" x="67.5" y="20" width="720" height="32"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="27.899999618530273"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact">
+                                                    <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="16.899999618530273"/>
+                                                </variation>
+                                            </label>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGk-1h-WUL">
+                                                <rect key="frame" x="24" y="76" width="804" height="314"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="lGk-1h-WUL" secondAttribute="bottom" constant="24" id="686-gT-U7M"/>
+                                            <constraint firstAttribute="trailing" secondItem="u9j-8Y-OXO" secondAttribute="trailing" constant="20" id="92x-dC-xzv"/>
+                                            <constraint firstItem="lGk-1h-WUL" firstAttribute="top" secondItem="vZc-XZ-odR" secondAttribute="bottom" constant="24" id="DTP-PZ-so2"/>
+                                            <constraint firstItem="vZc-XZ-odR" firstAttribute="leading" secondItem="u2f-36-BmW" secondAttribute="leading" constant="23" id="EJi-qC-sbV"/>
+                                            <constraint firstItem="lGk-1h-WUL" firstAttribute="leading" secondItem="u2f-36-BmW" secondAttribute="leading" constant="24" id="FSo-bX-dms"/>
+                                            <constraint firstItem="u9j-8Y-OXO" firstAttribute="top" secondItem="u2f-36-BmW" secondAttribute="top" constant="20" id="IVR-19-qYK"/>
+                                            <constraint firstItem="vZc-XZ-odR" firstAttribute="centerY" secondItem="LIM-WP-xjj" secondAttribute="centerY" id="Ltk-OI-6di"/>
+                                            <constraint firstItem="LIM-WP-xjj" firstAttribute="leading" secondItem="vZc-XZ-odR" secondAttribute="trailing" constant="12.5" id="b7c-u7-gWV"/>
+                                            <constraint firstItem="u9j-8Y-OXO" firstAttribute="leading" secondItem="LIM-WP-xjj" secondAttribute="trailing" constant="12.5" id="cBG-ld-BI6"/>
+                                            <constraint firstItem="LIM-WP-xjj" firstAttribute="top" secondItem="u9j-8Y-OXO" secondAttribute="top" id="cXW-oI-vqG"/>
+                                            <constraint firstItem="LIM-WP-xjj" firstAttribute="bottom" secondItem="u9j-8Y-OXO" secondAttribute="bottom" id="ltA-lg-XLM"/>
+                                            <constraint firstAttribute="trailing" secondItem="lGk-1h-WUL" secondAttribute="trailing" constant="24" id="utH-hj-zjO"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Youtube" translatesAutoresizingMaskIntoConstraints="NO" id="84t-o8-uLJ">
+                                        <rect key="frame" x="742" y="247" width="88" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="GrA-yL-Z8w">
+                                                <variation key="heightClass=compact" constant="20"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="125" id="bXc-LL-9wG">
+                                                <variation key="heightClass=compact" constant="88"/>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFx-AP-7BJ" customClass="RoundedView" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="282" width="812" height="75"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EbX-Ox-dYj" customClass="CustomSlider" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="50" width="796" height="24"/>
+                                                <color key="minimumTrackTintColor" red="0.035294117649999998" green="0.49019607840000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="thumbTintColor" red="0.035294117649999998" green="0.49019607840000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=compact">
+                                                    <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="videoSliderAction:event:" destination="rHm-EE-1qA" eventType="valueChanged" id="ipp-bi-A11"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50C-us-n9P">
+                                                <rect key="frame" x="15" y="34" width="28" height="13"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="11"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8H-z6-16N">
+                                                <rect key="frame" x="769" y="34" width="28" height="13"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="11"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                </variation>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-LB-E8j">
+                                                <rect key="frame" x="122" y="12" width="568" height="21"/>
+                                                <subviews>
+                                                    <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsP-P0-M7g" userLabel="full screen" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="79" y="11" width="9" height="10"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="i0L-pY-0OW">
+                                                                <variation key="heightClass=compact" constant="9"/>
+                                                            </constraint>
+                                                            <constraint firstAttribute="height" constant="30" id="zsc-7z-rMn">
+                                                                <variation key="heightClass=compact" constant="10"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <state key="normal" image="Video_Player_Shuffle"/>
+                                                        <connections>
+                                                            <action selector="videoControlAction:" destination="rHm-EE-1qA" eventType="touchUpInside" id="j7m-mN-W1h"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wg-9p-GXK" userLabel="previous" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="168" y="-1" width="24" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="ZJo-Wb-Mos">
+                                                                <variation key="heightClass=compact" constant="22"/>
+                                                            </constraint>
+                                                            <constraint firstAttribute="width" constant="30" id="hjN-FV-Y4P">
+                                                                <variation key="heightClass=compact" constant="24"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                                        <state key="normal" image="Video_Player_Fast_Previous"/>
+                                                        <connections>
+                                                            <action selector="videoControlAction:" destination="rHm-EE-1qA" eventType="touchUpInside" id="WJu-U8-r7K"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nag-ZH-Qig" userLabel="play" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="272" y="0.0" width="24" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="mBg-2S-YNt"/>
+                                                            <constraint firstAttribute="width" constant="50" id="ra1-su-M8l">
+                                                                <variation key="heightClass=compact" constant="24"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <state key="normal" image="Image_Gallery_Play_Text"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedImageName" value="Video_Player_Pause"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalImageName" value="Image_Gallery_Play_Text"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="mBg-2S-YNt"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <mask key="constraints">
+                                                                <include reference="mBg-2S-YNt"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="videoControlAction:" destination="rHm-EE-1qA" eventType="touchUpInside" id="ndG-IE-LLM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="Gzr-yW-UUG">
+                                                        <rect key="frame" x="237.00000000000003" y="3" width="14" height="13"/>
+                                                    </imageView>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV0-Ri-UIX" userLabel="next" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="376" y="-1" width="24" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="T1D-6R-qmT">
+                                                                <variation key="heightClass=compact" constant="24"/>
+                                                            </constraint>
+                                                            <constraint firstAttribute="height" constant="30" id="UIW-S4-GMz">
+                                                                <variation key="heightClass=compact" constant="22"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                                        <state key="normal" image="Video_Player_Fast_Forward"/>
+                                                        <connections>
+                                                            <action selector="videoControlAction:" destination="rHm-EE-1qA" eventType="touchUpInside" id="Q0x-0a-VEt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEk-kl-9VF" userLabel="repeat" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="480" y="9" width="10" height="12"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="1qO-Cq-5FD">
+                                                                <variation key="heightClass=compact" constant="10"/>
+                                                            </constraint>
+                                                            <constraint firstAttribute="height" constant="30" id="U93-gy-wQA">
+                                                                <variation key="heightClass=compact" constant="12"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <state key="normal" image="Video_Player_Fast_Repeat"/>
+                                                        <connections>
+                                                            <action selector="videoControlAction:" destination="rHm-EE-1qA" eventType="touchUpInside" id="NZs-bk-k0b"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="vV0-Ri-UIX" firstAttribute="leading" secondItem="Nag-ZH-Qig" secondAttribute="trailing" constant="80" id="2UU-WM-4j2"/>
+                                                    <constraint firstItem="Nag-ZH-Qig" firstAttribute="centerY" secondItem="8Wg-9p-GXK" secondAttribute="centerY" id="7a6-lc-fnO"/>
+                                                    <constraint firstItem="Gzr-yW-UUG" firstAttribute="centerY" secondItem="Nag-ZH-Qig" secondAttribute="centerY" id="7nS-cj-l21"/>
+                                                    <constraint firstItem="Gzr-yW-UUG" firstAttribute="height" secondItem="Nag-ZH-Qig" secondAttribute="height" constant="-8" id="8n9-85-Wul"/>
+                                                    <constraint firstItem="8Wg-9p-GXK" firstAttribute="centerY" secondItem="R7e-LB-E8j" secondAttribute="centerY" id="LKd-e4-pii"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Osm-R9-t2Z">
+                                                        <variation key="heightClass=compact" constant="21"/>
+                                                    </constraint>
+                                                    <constraint firstItem="Nag-ZH-Qig" firstAttribute="leading" secondItem="8Wg-9p-GXK" secondAttribute="trailing" constant="80" id="PrG-DG-NGs"/>
+                                                    <constraint firstItem="Gzr-yW-UUG" firstAttribute="centerX" secondItem="Nag-ZH-Qig" secondAttribute="centerX" id="TUh-k2-Xsg"/>
+                                                    <constraint firstItem="vV0-Ri-UIX" firstAttribute="centerY" secondItem="R7e-LB-E8j" secondAttribute="centerY" id="Uwd-py-vO3"/>
+                                                    <constraint firstItem="Nag-ZH-Qig" firstAttribute="centerY" secondItem="R7e-LB-E8j" secondAttribute="centerY" id="UxL-6C-DyP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="8Wg-9p-GXK" secondAttribute="bottom" id="WlX-wM-OLk"/>
+                                                    <constraint firstItem="ZsP-P0-M7g" firstAttribute="centerY" secondItem="R7e-LB-E8j" secondAttribute="centerY" id="Wvf-fc-nU2"/>
+                                                    <constraint firstItem="Gzr-yW-UUG" firstAttribute="centerY" secondItem="Nag-ZH-Qig" secondAttribute="centerY" id="X5N-a0-LPB"/>
+                                                    <constraint firstItem="Gzr-yW-UUG" firstAttribute="width" secondItem="Nag-ZH-Qig" secondAttribute="width" constant="-10" id="XsP-mq-WFL"/>
+                                                    <constraint firstItem="Nag-ZH-Qig" firstAttribute="centerX" secondItem="R7e-LB-E8j" secondAttribute="centerX" id="YDd-UP-MQ9"/>
+                                                    <constraint firstAttribute="bottom" secondItem="KEk-kl-9VF" secondAttribute="bottom" id="YO8-dK-1XR"/>
+                                                    <constraint firstItem="8Wg-9p-GXK" firstAttribute="leading" secondItem="ZsP-P0-M7g" secondAttribute="trailing" constant="80" id="aIK-8i-vd5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Nag-ZH-Qig" secondAttribute="bottom" id="bKg-r0-pX0"/>
+                                                    <constraint firstItem="KEk-kl-9VF" firstAttribute="centerY" secondItem="R7e-LB-E8j" secondAttribute="centerY" id="hhm-Us-JEy"/>
+                                                    <constraint firstItem="KEk-kl-9VF" firstAttribute="leading" secondItem="vV0-Ri-UIX" secondAttribute="trailing" constant="80" id="lds-cb-RHk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Gzr-yW-UUG" secondAttribute="bottom" constant="5" id="nfw-rX-UcB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vV0-Ri-UIX" secondAttribute="bottom" id="ygC-vX-9o4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ZsP-P0-M7g" secondAttribute="bottom" id="zTl-I0-v52"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Wvf-fc-nU2"/>
+                                                        <exclude reference="zTl-I0-v52"/>
+                                                        <exclude reference="LKd-e4-pii"/>
+                                                        <exclude reference="WlX-wM-OLk"/>
+                                                        <exclude reference="7nS-cj-l21"/>
+                                                        <exclude reference="X5N-a0-LPB"/>
+                                                        <exclude reference="nfw-rX-UcB"/>
+                                                        <exclude reference="7a6-lc-fnO"/>
+                                                        <exclude reference="UxL-6C-DyP"/>
+                                                        <exclude reference="bKg-r0-pX0"/>
+                                                        <exclude reference="Uwd-py-vO3"/>
+                                                        <exclude reference="ygC-vX-9o4"/>
+                                                        <exclude reference="YO8-dK-1XR"/>
+                                                        <exclude reference="hhm-Us-JEy"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="zTl-I0-v52"/>
+                                                        <include reference="WlX-wM-OLk"/>
+                                                        <include reference="X5N-a0-LPB"/>
+                                                        <include reference="nfw-rX-UcB"/>
+                                                        <include reference="7a6-lc-fnO"/>
+                                                        <include reference="ygC-vX-9o4"/>
+                                                        <include reference="YO8-dK-1XR"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="Wvf-fc-nU2"/>
+                                                        <include reference="LKd-e4-pii"/>
+                                                        <include reference="7nS-cj-l21"/>
+                                                        <include reference="UxL-6C-DyP"/>
+                                                        <include reference="Uwd-py-vO3"/>
+                                                        <include reference="hhm-Us-JEy"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="50C-us-n9P" firstAttribute="leading" secondItem="YFx-AP-7BJ" secondAttribute="leading" constant="15" id="1Ct-wP-mA0"/>
+                                            <constraint firstItem="EbX-Ox-dYj" firstAttribute="top" secondItem="YFx-AP-7BJ" secondAttribute="top" constant="50" id="29t-cx-CXQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="EbX-Ox-dYj" secondAttribute="bottom" constant="15" id="55Y-h3-e8D">
+                                                <variation key="heightClass=compact" constant="2"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="A8H-z6-16N" secondAttribute="trailing" constant="15" id="6O4-BR-L3Z"/>
+                                            <constraint firstItem="EbX-Ox-dYj" firstAttribute="leading" secondItem="YFx-AP-7BJ" secondAttribute="leading" constant="10" id="BB2-N0-8eK"/>
+                                            <constraint firstItem="EbX-Ox-dYj" firstAttribute="top" secondItem="50C-us-n9P" secondAttribute="bottom" constant="10" id="Bc5-mD-Kyi">
+                                                <variation key="heightClass=compact" constant="3.0000000000000355"/>
+                                            </constraint>
+                                            <constraint firstItem="EbX-Ox-dYj" firstAttribute="top" secondItem="R7e-LB-E8j" secondAttribute="bottom" constant="25" id="LmL-GN-2UV">
+                                                <variation key="heightClass=compact" constant="17"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="EbX-Ox-dYj" secondAttribute="trailing" constant="10" id="T73-fv-8iK"/>
+                                            <constraint firstAttribute="height" constant="175" id="WtL-3u-hjV"/>
+                                            <constraint firstItem="A8H-z6-16N" firstAttribute="centerY" secondItem="50C-us-n9P" secondAttribute="centerY" id="Y1x-kD-ylk"/>
+                                            <constraint firstItem="R7e-LB-E8j" firstAttribute="centerX" secondItem="YFx-AP-7BJ" secondAttribute="centerX" id="eja-2V-QxZ"/>
+                                            <constraint firstAttribute="width" secondItem="R7e-LB-E8j" secondAttribute="width" multiplier="1:0.7" id="wLS-cY-7oG"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="WtL-3u-hjV"/>
+                                                <exclude reference="29t-cx-CXQ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="29t-cx-CXQ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="WtL-3u-hjV"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJT-Nf-QBr" customClass="RoundedView" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="367" width="852" height="47"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sdT-qT-KOC">
+                                                <rect key="frame" x="180" y="14" width="492" height="18"/>
+                                                <subviews>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THb-kp-BAa" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="18"/>
+                                                        <state key="normal" image="Image_Gallery_Inspect"/>
+                                                        <state key="selected" image="Image_Gallery_Inspect_Selected"/>
+                                                        <connections>
+                                                            <action selector="showInspectView:" destination="rHm-EE-1qA" eventType="touchUpInside" id="T14-B4-1lH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kY-OX-K02" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="18"/>
+                                                        <state key="normal" image="Image_Gallery_Search"/>
+                                                        <connections>
+                                                            <action selector="searchWithTagButtonAction:" destination="rHm-EE-1qA" eventType="touchUpInside" id="tTS-I7-fw5"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxm-6r-ffb" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="246" height="18"/>
+                                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                                        <state key="normal" image="heart" catalog="system"/>
+                                                        <state key="selected" image="home_bottom_nav_liked_selected_icon"/>
+                                                        <connections>
+                                                            <action selector="likeAction:" destination="rHm-EE-1qA" eventType="touchUpInside" id="yXq-8p-Gkl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXs-5T-rmY" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="246" y="0.0" width="246" height="18"/>
+                                                        <state key="normal" image="Image_Gallery_Share"/>
+                                                        <connections>
+                                                            <action selector="showShareView:" destination="rHm-EE-1qA" eventType="touchUpInside" id="EAI-2z-okT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2br-Kx-Jc3" customClass="CustomButton" customModule="CustomMusicPlayer" customModuleProvider="target">
+                                                        <rect key="frame" x="492" y="0.0" width="0.0" height="18"/>
+                                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                                        <state key="normal" image="trash" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="deleteButtonAction:" destination="rHm-EE-1qA" eventType="touchUpInside" id="TcZ-d8-vi2"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="sdT-qT-KOC" firstAttribute="top" secondItem="yJT-Nf-QBr" secondAttribute="top" constant="14" id="737-Iw-bSu"/>
+                                            <constraint firstAttribute="bottom" secondItem="sdT-qT-KOC" secondAttribute="bottom" constant="15" id="9xo-cX-Ff7"/>
+                                            <constraint firstItem="sdT-qT-KOC" firstAttribute="leading" secondItem="yJT-Nf-QBr" secondAttribute="leading" constant="180" id="Eno-5F-ARE">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="60" id="TOS-ak-6G2">
+                                                <variation key="heightClass=compact" constant="47"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="sdT-qT-KOC" secondAttribute="trailing" constant="180" id="veu-kL-obI">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                            </constraint>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="u2f-36-BmW" firstAttribute="leading" secondItem="eRc-4i-flY" secondAttribute="leading" id="0Tf-0p-uWm"/>
+                                    <constraint firstAttribute="trailing" secondItem="yJT-Nf-QBr" secondAttribute="trailing" constant="20" id="1aI-uh-Vt5">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="u2f-36-BmW" secondAttribute="bottom" id="4f7-ZJ-6Ev"/>
+                                    <constraint firstAttribute="bottom" secondItem="yJT-Nf-QBr" secondAttribute="bottom" constant="20" id="9pE-Ou-6PA">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstItem="YFx-AP-7BJ" firstAttribute="top" secondItem="84t-o8-uLJ" secondAttribute="bottom" constant="15" id="A1w-MB-REV"/>
+                                    <constraint firstAttribute="trailing" secondItem="u2f-36-BmW" secondAttribute="trailing" id="Bou-O2-zzC"/>
+                                    <constraint firstItem="yJT-Nf-QBr" firstAttribute="top" secondItem="YFx-AP-7BJ" secondAttribute="bottom" constant="10" id="JEa-79-fpo"/>
+                                    <constraint firstItem="u2f-36-BmW" firstAttribute="top" secondItem="eRc-4i-flY" secondAttribute="top" id="MPI-0s-Dn6"/>
+                                    <constraint firstAttribute="trailing" secondItem="84t-o8-uLJ" secondAttribute="trailing" constant="22" id="Z31-vf-uEA"/>
+                                    <constraint firstItem="YFx-AP-7BJ" firstAttribute="leading" secondItem="eRc-4i-flY" secondAttribute="leading" constant="20" id="fi5-PP-mLc"/>
+                                    <constraint firstAttribute="trailing" secondItem="YFx-AP-7BJ" secondAttribute="trailing" constant="20" id="lkZ-HB-KBK"/>
+                                    <constraint firstItem="yJT-Nf-QBr" firstAttribute="leading" secondItem="eRc-4i-flY" secondAttribute="leading" constant="20" id="xM8-76-aXf">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                    </constraint>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bUZ-Wa-IMH"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eRc-4i-flY" firstAttribute="trailing" secondItem="bUZ-Wa-IMH" secondAttribute="trailing" id="3CM-qH-qpS"/>
+                            <constraint firstItem="cJH-cJ-8aK" firstAttribute="leading" secondItem="eRc-4i-flY" secondAttribute="leading" id="B4a-8j-36L"/>
+                            <constraint firstAttribute="trailing" secondItem="cJH-cJ-8aK" secondAttribute="trailing" id="Ew2-8Q-HXj"/>
+                            <constraint firstItem="cJH-cJ-8aK" firstAttribute="top" secondItem="zqc-bV-yQc" secondAttribute="top" id="Nwh-UE-jHv"/>
+                            <constraint firstItem="eRc-4i-flY" firstAttribute="leading" secondItem="zqc-bV-yQc" secondAttribute="leading" id="c64-gh-oua"/>
+                            <constraint firstAttribute="bottom" secondItem="eRc-4i-flY" secondAttribute="bottom" id="dAX-Z4-alT"/>
+                            <constraint firstAttribute="bottom" secondItem="cJH-cJ-8aK" secondAttribute="bottom" id="rDq-qf-cK9"/>
+                            <constraint firstItem="eRc-4i-flY" firstAttribute="top" secondItem="zqc-bV-yQc" secondAttribute="top" id="sXB-W7-WOH"/>
+                            <constraint firstItem="YFx-AP-7BJ" firstAttribute="height" secondItem="zqc-bV-yQc" secondAttribute="height" multiplier="0.18133" id="u4k-rQ-Qvk"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="u4k-rQ-Qvk"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="u4k-rQ-Qvk"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="bottomBarBottomConstraint" destination="9pE-Ou-6PA" id="FJ4-mC-LAH"/>
+                        <outlet property="bottomBarHeightConstraint" destination="TOS-ak-6G2" id="LG6-bs-P2H"/>
+                        <outlet property="bottomBarView" destination="yJT-Nf-QBr" id="qje-nk-Ufl"/>
+                        <outlet property="brandImage" destination="84t-o8-uLJ" id="Rdp-PH-0eW"/>
+                        <outlet property="brandImageBottomConstraint" destination="A1w-MB-REV" id="Ikp-Vo-Uqd"/>
+                        <outlet property="closeButton" destination="u9j-8Y-OXO" id="wuB-7b-7eM"/>
+                        <outlet property="containerView" destination="eRc-4i-flY" id="aLx-Zu-qrc"/>
+                        <outlet property="controlContainerHeightConstraint" destination="u4k-rQ-Qvk" id="HTC-yf-atg"/>
+                        <outlet property="controlsContainerView" destination="YFx-AP-7BJ" id="FGM-vc-8PO"/>
+                        <outlet property="currentTime" destination="50C-us-n9P" id="cqo-NT-zGM"/>
+                        <outlet property="deleteButton" destination="2br-Kx-Jc3" id="20U-F9-5SN"/>
+                        <outlet property="endTime" destination="A8H-z6-16N" id="4CK-tP-gXr"/>
+                        <outlet property="errorContainer" destination="lGk-1h-WUL" id="uLe-Bx-BJy"/>
+                        <outlet property="gestureHandlingView" destination="u2f-36-BmW" id="yYq-22-chm"/>
+                        <outlet property="gradientView" destination="x6L-Lb-0TB" id="M2L-gX-JyU"/>
+                        <outlet property="inspectButton" destination="THb-kp-BAa" id="OtE-CP-8kB"/>
+                        <outlet property="likeButton" destination="Gxm-6r-ffb" id="ING-DW-3ce"/>
+                        <outlet property="musicSampleImage" destination="y4J-Jx-OUk" id="QLm-Y7-3QJ"/>
+                        <outlet property="nextButton" destination="vV0-Ri-UIX" id="roc-6S-4z3"/>
+                        <outlet property="playPauseButton" destination="Nag-ZH-Qig" id="6Gg-03-ffL"/>
+                        <outlet property="previousButton" destination="8Wg-9p-GXK" id="645-QN-C1r"/>
+                        <outlet property="videoLoadingImageView" destination="Gzr-yW-UUG" id="dlu-VF-2wg"/>
+                        <outlet property="videoPlayerView" destination="cJH-cJ-8aK" id="Pvk-yg-aOY"/>
+                        <outlet property="videoSlider" destination="EbX-Ox-dYj" id="fPr-0m-Chq"/>
+                        <outlet property="videoTitleLabel" destination="LIM-WP-xjj" id="SF8-Nt-uci"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ts1-vN-73S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-774.609375" y="-717.96875"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="2br-Kx-Jc3">
+            <size key="intrinsicContentSize" width="19.5" height="22"/>
+        </designable>
+        <designable name="2kY-OX-K02">
+            <size key="intrinsicContentSize" width="23" height="22"/>
+        </designable>
+        <designable name="8Wg-9p-GXK">
+            <size key="intrinsicContentSize" width="60" height="47"/>
+        </designable>
+        <designable name="Gxm-6r-ffb">
+            <size key="intrinsicContentSize" width="20.5" height="22"/>
+        </designable>
+        <designable name="KEk-kl-9VF">
+            <size key="intrinsicContentSize" width="44" height="49"/>
+        </designable>
+        <designable name="Nag-ZH-Qig">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="PXs-5T-rmY">
+            <size key="intrinsicContentSize" width="16" height="22"/>
+        </designable>
+        <designable name="THb-kp-BAa">
+            <size key="intrinsicContentSize" width="21" height="22"/>
+        </designable>
+        <designable name="ZsP-P0-M7g">
+            <size key="intrinsicContentSize" width="40" height="43"/>
+        </designable>
+        <designable name="vV0-Ri-UIX">
+            <size key="intrinsicContentSize" width="60" height="47"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Image_Gallery_Close" width="125" height="125"/>
+        <image name="Image_Gallery_Inspect" width="21" height="16"/>
+        <image name="Image_Gallery_Inspect_Selected" width="125" height="96"/>
+        <image name="Image_Gallery_Play_Text" width="42" height="63"/>
+        <image name="Image_Gallery_Search" width="23" height="9"/>
+        <image name="Image_Gallery_Share" width="16" height="18"/>
+        <image name="Video_Player_Fast_Forward" width="60" height="47"/>
+        <image name="Video_Player_Fast_Previous" width="60" height="47"/>
+        <image name="Video_Player_Fast_Repeat" width="44" height="49"/>
+        <image name="Video_Player_Shuffle" width="40" height="43"/>
+        <image name="Youtube" width="126" height="28"/>
+        <image name="audio_player_top_icon" width="32" height="32"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="home_bottom_nav_liked_selected_icon" width="125" height="96"/>
+        <image name="loading" width="125" height="125"/>
+        <image name="music" width="23" height="21"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
