@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,19 +13,33 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomMusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CE-ZX-sDZ">
-                                <rect key="frame" x="8" y="438" width="398" height="30"/>
-                                <state key="normal" title="Play Audio"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CE-ZX-sDZ" userLabel="Play Audio(New)">
+                                <rect key="frame" x="8" y="497" width="384" height="30"/>
+                                <state key="normal" title="Play Audio (New)"/>
                                 <connections>
                                     <action selector="playAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQz-Qt-kpg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daT-93-jPD">
-                                <rect key="frame" x="8" y="360" width="398" height="30"/>
-                                <state key="normal" title="Play Video"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yt-jc-OeM" userLabel="Play Audio(Old)">
+                                <rect key="frame" x="402" y="497" width="345.5" height="30"/>
+                                <state key="normal" title="Play Audio (Old)"/>
+                                <connections>
+                                    <action selector="playAudioInOldView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4AR-Fi-1ii"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-m7-LcT" userLabel="Play Video(Old)">
+                                <rect key="frame" x="402" y="419" width="345.5" height="30"/>
+                                <state key="normal" title="Play Video (Old)"/>
+                                <connections>
+                                    <action selector="playVideoInOldView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w74-BT-CGO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daT-93-jPD" userLabel="Play Video(New)">
+                                <rect key="frame" x="8" y="419" width="384" height="30"/>
+                                <state key="normal" title="Play Video (New)"/>
                                 <connections>
                                     <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tJB-xI-RN2"/>
                                 </connections>
@@ -34,20 +48,26 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="daT-93-jPD" firstAttribute="trailing" secondItem="0CE-ZX-sDZ" secondAttribute="trailing" id="Fn4-d9-eic"/>
-                            <constraint firstItem="daT-93-jPD" firstAttribute="centerX" secondItem="0CE-ZX-sDZ" secondAttribute="centerX" id="LIE-g6-KZM"/>
+                            <constraint firstItem="9Yt-jc-OeM" firstAttribute="top" secondItem="0CE-ZX-sDZ" secondAttribute="top" id="FFF-NP-Wcw"/>
+                            <constraint firstItem="Ft7-m7-LcT" firstAttribute="leading" secondItem="daT-93-jPD" secondAttribute="trailing" constant="10" id="FMo-QR-1y1"/>
+                            <constraint firstItem="9Yt-jc-OeM" firstAttribute="leading" secondItem="Ft7-m7-LcT" secondAttribute="leading" id="GBQ-5n-6F4"/>
+                            <constraint firstItem="9Yt-jc-OeM" firstAttribute="bottom" secondItem="0CE-ZX-sDZ" secondAttribute="bottom" id="I1u-s2-MP2"/>
+                            <constraint firstItem="Ft7-m7-LcT" firstAttribute="top" secondItem="daT-93-jPD" secondAttribute="top" id="KpB-ds-dPr"/>
                             <constraint firstItem="daT-93-jPD" firstAttribute="leading" secondItem="0CE-ZX-sDZ" secondAttribute="leading" id="SpR-1u-vFw"/>
                             <constraint firstItem="0CE-ZX-sDZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="TyA-aQ-hxr"/>
                             <constraint firstItem="0CE-ZX-sDZ" firstAttribute="top" secondItem="daT-93-jPD" secondAttribute="bottom" constant="48" id="Xb5-Uj-Gbf"/>
                             <constraint firstItem="0CE-ZX-sDZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lf8-zr-rRK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0CE-ZX-sDZ" secondAttribute="trailing" constant="8" id="n6r-dN-dkn"/>
-                            <constraint firstItem="0CE-ZX-sDZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="siA-dN-AWZ"/>
+                            <constraint firstItem="Ft7-m7-LcT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.45" id="qKc-21-IUe"/>
+                            <constraint firstItem="daT-93-jPD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="rZv-ee-NM7"/>
+                            <constraint firstItem="9Yt-jc-OeM" firstAttribute="trailing" secondItem="Ft7-m7-LcT" secondAttribute="trailing" id="s4x-K2-OTu"/>
+                            <constraint firstItem="0CE-ZX-sDZ" firstAttribute="trailing" secondItem="daT-93-jPD" secondAttribute="trailing" id="wdl-wD-mZE"/>
+                            <constraint firstItem="Ft7-m7-LcT" firstAttribute="bottom" secondItem="daT-93-jPD" secondAttribute="bottom" id="x8b-OY-XPj"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="36.830357142857139"/>
+            <point key="canvasLocation" x="139.84375" y="36.328125"/>
         </scene>
     </scenes>
     <resources>
