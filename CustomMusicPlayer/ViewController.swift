@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     private func performPlay(url:URL){
         let sb = UIStoryboard(name: "Player", bundle: nil)
-        let vc = sb.instantiateInitialViewController() as? AudioViewController
+        let vc = sb.instantiateInitialViewController() as? AudioViewControllerNewView
         //http://techslides.com/demos/sample-videos/small.mp4
         //http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4
         //https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3

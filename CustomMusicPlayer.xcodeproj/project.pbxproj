@@ -29,6 +29,7 @@
 		C375C8D02601F8C000CCD88B /* AVPlayer+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C375C8CC2601F8C000CCD88B /* AVPlayer+Utilities.swift */; };
 		C375C8D12601F8C000CCD88B /* RegularPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C375C8CD2601F8C000CCD88B /* RegularPlayer.swift */; };
 		C3D1C3A4267B430000B06355 /* AVScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D1C3A3267B430000B06355 /* AVScreenShot.swift */; };
+		C3D1C3A7267B4B4A00B06355 /* AudioViewControllerNewVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D1C3A6267B4B4A00B06355 /* AudioViewControllerNewVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		C375C8CC2601F8C000CCD88B /* AVPlayer+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Utilities.swift"; sourceTree = "<group>"; };
 		C375C8CD2601F8C000CCD88B /* RegularPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularPlayer.swift; sourceTree = "<group>"; };
 		C3D1C3A3267B430000B06355 /* AVScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVScreenShot.swift; sourceTree = "<group>"; };
+		C3D1C3A6267B4B4A00B06355 /* AudioViewControllerNewVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewControllerNewVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				C375C8AA2601EF4100CCD88B /* AudioInteractor.swift */,
 				C375C8B02601EF6100CCD88B /* AudioPresenter.swift */,
 				C375C8B32601EF7C00CCD88B /* AudioRouter.swift */,
+				C3D1C3A6267B4B4A00B06355 /* AudioViewControllerNewVIew.swift */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				C375C8C12601F2C600CCD88B /* VideoEventHandler.swift in Sources */,
 				C375C8CF2601F8C000CCD88B /* Player.swift in Sources */,
 				C375C8D02601F8C000CCD88B /* AVPlayer+Utilities.swift in Sources */,
+				C3D1C3A7267B4B4A00B06355 /* AudioViewControllerNewVIew.swift in Sources */,
 				C375C8B42601EF7C00CCD88B /* AudioRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

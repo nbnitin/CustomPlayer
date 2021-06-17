@@ -18,14 +18,21 @@ class CustomSlider: UISlider {
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
         debugPrint("In Track Rect.")
         return CGRect(x: 0, y: 0, width: bounds.size.width, height: 8) //30
-     }
+    }
     
     override func thumbRect(forBounds bounds: CGRect, trackRect rect: CGRect, value: Float) -> CGRect {
-         debugPrint("In Thumb Rect.")
+        debugPrint("In Thumb Rect.")
         return super.thumbRect(forBounds: bounds, trackRect: rect, value: value)
     }
 }
 
+class CustomSliderForNewView: UISlider {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.cornerRadius = 15
+    }
+}
 
 @IBDesignable
 class RoundedView: UIView {
@@ -52,20 +59,20 @@ class RoundedView: UIView {
 @IBDesignable
 class RoundedButton: UIButton {
     @IBInspectable var cornerRadius: CGFloat = 3.0 {
-            didSet {
-                self.layer.cornerRadius = cornerRadius
-            }
+        didSet {
+            self.layer.cornerRadius = cornerRadius
         }
-        
-        override func awakeFromNib() {
-            self.setupView()
-        }
-        
-        override func prepareForInterfaceBuilder() {
-            super.prepareForInterfaceBuilder()
-            self.setupView()
-        }
-        
+    }
+    
+    override func awakeFromNib() {
+        self.setupView()
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        self.setupView()
+    }
+    
     func setupView() {
         self.imageView?.contentMode = .scaleAspectFit
         self.layer.cornerRadius = cornerRadius
