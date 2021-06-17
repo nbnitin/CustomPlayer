@@ -106,6 +106,8 @@ class AudioViewController: UIViewController, AudioDisplayProtocol {
         if urlToPlay.absoluteString.contains("mp4") || urlToPlay.absoluteString.contains("m3u8") {
             musicSampleImage.isHidden = true
             gradientView.isHidden = true
+        } else {
+            captureButtonContainer.isHidden = true
         }
         
     }
