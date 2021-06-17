@@ -18,6 +18,8 @@ let AUDIO_DELETE_BUTTON_CONTENT_EDGE_IPAD : CGFloat = 6.2
 class AudioViewController: UIViewController, AudioDisplayProtocol {
     
     //outlets
+    @IBOutlet var captureButtonContainer: UIView!
+    @IBOutlet var capturedImageContainer: UIView!
     @IBOutlet var gradientView: GradientView!
     @IBOutlet var closeButton: UIButton!
     @IBOutlet var deleteButton: CustomButton!
@@ -101,11 +103,16 @@ class AudioViewController: UIViewController, AudioDisplayProtocol {
         videoSlider.frame.size.height = videoSliderHeightToBe
         oldBrandImageBottomConstraintConstant = brandImageBottomConstraint.constant
         
-        if urlToPlay.absoluteString.contains("mp4") {
+        if urlToPlay.absoluteString.contains("mp4") || urlToPlay.absoluteString.contains("m3u8") {
             musicSampleImage.isHidden = true
             gradientView.isHidden = true
         }
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        captureButtonContainer.beizerRound(corners:[.bottomRight , .topRight])
     }
     
     //MARK: view did appear, here we are controlling the brand icon which to show as per the url or content provider. If video is locally recorded and running from my gallery then no brand icon and title should be displayed
@@ -267,6 +274,21 @@ class AudioViewController: UIViewController, AudioDisplayProtocol {
         }
     }
     
+    //MARK: close captured image container
+    @IBAction func closeCapturedImageContainerButtonAction(_ sender: Any) {
+        interactor?.playVideo()
+        capturedImageContainer.isHidden = true
+        captureButtonContainer.isHidden = false
+    }
+    
+    //MAKR: takes video's screenshot
+    @IBAction func takeScreenShot(_ sender: Any) {
+        interactor?.pauseVideo()
+        capturedImageContainer.isHidden = false
+        let capturedImage = interactor?.videoPlayer?.takeScreenshot()
+        (capturedImageContainer.subviews.first as? UIImageView)?.image = capturedImage
+        captureButtonContainer.isHidden = true
+    }
 }
 
 //MARK: video player event delegate
@@ -385,3 +407,13 @@ extension AudioViewController: VideoEventDelegate {
     
 }
 
+
+extension UIView {
+    func beizerRound(corners:UIRectCorner,size:CGSize=CGSize(width: 100, height: 100)){
+        let rectShape = CAShapeLayer()
+        rectShape.bounds = self.frame
+        rectShape.position = self.center
+        rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: size).cgPath
+        self.layer.mask = rectShape
+    }
+}

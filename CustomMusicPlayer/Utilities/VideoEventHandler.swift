@@ -18,6 +18,7 @@ protocol VideoEventHandler: class {
     func replayVideo()
     func seek(time: Double)
     func moveWith(time: Double)
+    func takeScreenshot() -> UIImage?
 }
 
 protocol VideoEventDelegate: class {

@@ -19,6 +19,8 @@ extension AVMediaSelectionOption: TextTrackMetadata {
 
 /// A RegularPlayer is used to play regular videos.
 @objc open class RegularPlayer: NSObject, Player, ProvidesView {
+    let objForVideoOuput = AVPlayerItemVideoOutput()
+
     public struct Constants {
         public static let TimeUpdateInterval: TimeInterval = 0.1
     }
@@ -42,7 +44,8 @@ extension AVMediaSelectionOption: TextTrackMetadata {
         // Replace it with the new item
         
         let playerItem = AVPlayerItem(asset: asset)
-        
+        playerItem.add(objForVideoOuput)
+
         self.addPlayerItemObservers(toPlayerItem: playerItem)
         
         self.player.replaceCurrentItem(with: playerItem)
@@ -148,6 +151,14 @@ extension AVMediaSelectionOption: TextTrackMetadata {
     
     private func setupAirplay() {
         self.player.usesExternalPlaybackWhileExternalScreenIsActive = true
+    }
+    
+    public func getPlayerItemVideoOutputObject()->AVPlayerItemVideoOutput {
+        return objForVideoOuput
+    }
+    
+    public func getCurrentTime()->CMTime{
+        return player.currentTime()
     }
     
     // MARK: Observers

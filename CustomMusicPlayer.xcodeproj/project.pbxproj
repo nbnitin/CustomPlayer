@@ -28,6 +28,7 @@
 		C375C8CF2601F8C000CCD88B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C375C8CB2601F8C000CCD88B /* Player.swift */; };
 		C375C8D02601F8C000CCD88B /* AVPlayer+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C375C8CC2601F8C000CCD88B /* AVPlayer+Utilities.swift */; };
 		C375C8D12601F8C000CCD88B /* RegularPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C375C8CD2601F8C000CCD88B /* RegularPlayer.swift */; };
+		C3D1C3A4267B430000B06355 /* AVScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D1C3A3267B430000B06355 /* AVScreenShot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		C375C8CB2601F8C000CCD88B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C375C8CC2601F8C000CCD88B /* AVPlayer+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Utilities.swift"; sourceTree = "<group>"; };
 		C375C8CD2601F8C000CCD88B /* RegularPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularPlayer.swift; sourceTree = "<group>"; };
+		C3D1C3A3267B430000B06355 /* AVScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVScreenShot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				C375C8C02601F2C600CCD88B /* VideoEventHandler.swift */,
 				C375C8C32601F30D00CCD88B /* FeedModel.swift */,
 				C375C8C72601F82E00CCD88B /* VimeoPlayer.swift */,
+				C3D1C3A3267B430000B06355 /* AVScreenShot.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D1C3A4267B430000B06355 /* AVScreenShot.swift in Sources */,
 				C375C8AB2601EF4100CCD88B /* AudioInteractor.swift in Sources */,
 				C375C8CE2601F8C000CCD88B /* CMTime+Utilities.swift in Sources */,
 				C375C8BE2601F26900CCD88B /* CustomSlider.swift in Sources */,

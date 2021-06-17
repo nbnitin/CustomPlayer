@@ -8,7 +8,7 @@
 import Foundation
 import AVKit
 
-class VimeoPlayerWrapper:NSObject, VideoEventHandler {
+class VimeoPlayerWrapper:NSObject, VideoEventHandler, AVScreenshotProtocol {
     
     private var player = RegularPlayer()
     private var selectedAVURLAsset: AVURLAsset?
@@ -63,6 +63,37 @@ class VimeoPlayerWrapper:NSObject, VideoEventHandler {
         player.seek(to: time)
     }
     
+    func takeScreenshot() -> UIImage? {
+        guard let asset = selectedAVURLAsset else {
+            debugPrint("Found nil while accessing  selectedAVURLAsset.")
+            return nil
+        }
+        var screenShotTime: CMTime = asset.duration
+        screenShotTime.value = CMTimeValue(Int(player.time))
+        
+        if let img = Self.generateThumbnailFromAsset(asset: asset, forTime: player.getCurrentTime()) {
+            return img
+        } else {
+//            //hls or m3u8 url video
+            return imageFromCurrentPlayerContext()
+        }
+        
+    }
+    
+    private func imageFromCurrentPlayerContext()->UIImage? {
+        
+        let jpegCompressionQuality = 0.7
+        let currentTime: CMTime =  player.getCurrentTime()
+        guard let buffer: CVPixelBuffer = (player.getPlayerItemVideoOutputObject()).copyPixelBuffer(forItemTime: currentTime, itemTimeForDisplay: nil) else { return nil }
+        let ciImage: CIImage = CIImage(cvPixelBuffer: buffer)
+        let context: CIContext = CIContext.init(options: nil)
+        
+        guard let cgImage: CGImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
+        let image: UIImage = UIImage.init(cgImage: cgImage)
+         guard let jpegImage: Data = image.jpegData(compressionQuality: CGFloat(jpegCompressionQuality)) else { return nil }
+        print(jpegImage)
+        return image
+    }
     
     
     func replayVideo() {

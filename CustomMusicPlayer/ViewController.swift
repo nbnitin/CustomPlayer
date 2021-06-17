@@ -25,7 +25,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func playVideo(_ sender: Any) {
-        performPlay(url:URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!)
+        //use this for HLS or m3u8 videos
+        //http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8
+        
+        //for mp4 videos
+       // http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4
+        
+        performPlay(url:URL(string: "http://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel.ism/.m3u8")!)
     }
     @IBAction func playAudio(_ sender: Any) {
         performPlay(url:URL(string: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")!)
