@@ -365,7 +365,7 @@ extension AudioViewControllerNewView: VideoEventDelegate {
             
         }
         
-        if self.videoSlider.value >= (self.videoSlider.maximumValue - adjustmentValue) {
+        if self.videoSlider.value >= (self.videoSlider.maximumValue - adjustmentValue) && self.videoSlider.value > 0 {
             self.didVideoCompleted = true
             playPauseButton.isSelected = false
         }
