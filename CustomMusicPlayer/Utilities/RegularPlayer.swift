@@ -45,9 +45,7 @@ extension AVMediaSelectionOption: TextTrackMetadata {
         
         let playerItem = AVPlayerItem(asset: asset)
         playerItem.add(objForVideoOuput)
-
         self.addPlayerItemObservers(toPlayerItem: playerItem)
-        
         self.player.replaceCurrentItem(with: playerItem)
     }
     
@@ -145,6 +143,7 @@ extension AVMediaSelectionOption: TextTrackMetadata {
         }
         
         self.removePlayerObservers()
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: Setup
@@ -181,6 +180,11 @@ extension AVMediaSelectionOption: TextTrackMetadata {
         playerItem.addObserver(self, forKeyPath: KeyPath.PlayerItem.Status, options: [.initial, .new], context: nil)
         playerItem.addObserver(self, forKeyPath: KeyPath.PlayerItem.PlaybackLikelyToKeepUp, options: [.initial, .new], context: nil)
         playerItem.addObserver(self, forKeyPath: KeyPath.PlayerItem.LoadedTimeRanges, options: [.initial, .new], context: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.playerDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+    }
+    
+    @objc func playerDidFinishPlaying(sender:Notification){
+        delegate?.didFinishPlaying()
     }
     
     private func removePlayerItemObservers(fromPlayerItem playerItem: AVPlayerItem) {
